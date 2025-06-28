@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: tsa-item-checker
+    env: python
+    buildCommand: "pip install --only-binary=all -r requirements.txt"
+    startCommand: "python main.py"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: PIP_ONLY_BINARY
+        value: ":all:"
+      - key: PIP_NO_BUILD_ISOLATION
+        value: "true" 
